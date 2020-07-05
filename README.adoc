@@ -1,0 +1,28 @@
+# Almacén de datos de Aves Chilenas (Chilean Birds Dataset)
+
+This is a dataset which contains chilean birds.
+This data was extracted from http://www.buscaves.cl/[Buscaves.cl].
+
+All bird images and audios are property of their respective owners.
+
+*Español*
+
+Esto es un almacén de datos el cual contiene aves chilenas.
+Esta información fue extraída desde http://www.buscaves.cl/[Buscaves.cl].
+
+Todas las imagenes y audios son propiedad de sus respectivos dueños.
+
+## Usage
+
+You can use this dataset to create apps and other tools to help spreading 
+the knowledge about chilean birds.
+
+*Español*
+
+Puedes utilizar este almacén de datos para crear aplicaciones y otras 
+herramientas para ayudar a expandir el conocimiento acerca de las 
+aves chilenas.
+
+++++
+Made with <i class="fa fa-heart">&#9829;</i> by <a href="https://ninjas.cl" target="_blank">Ninjas.cl</a>.
+++++
