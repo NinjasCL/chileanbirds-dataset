@@ -13,13 +13,20 @@ def image_filename(image):
     ext = ".jpg"
   return name + ext
 
+def sanitize_uid(uid):
+  return uid.replace("(", "").replace(")", "").replace(" ", "")
+
 def prepare_bird(item, index = 0):
   data = item["data"]
+  uid = sanitize_uid(data["uid"])
   bird = {
     "sort": index,
     "id": data["id"],
-    "uid": data["uid"],
-    "uri": f"{data["uid"]}/data.json",
+    "uid": uid,
+    "meta": {
+      "uid": data["uid"]
+    },
+    "uri": f"{uid}/data.json",
     "names" : {
       "es": data["names"]["spanish"],
       "en": data["names"]["english"],
@@ -68,10 +75,10 @@ def main():
 
   for index, item in enumerate(birds):
     bird = prepare_bird(item, index)
-    uid = bird.get("uid")
+    uid = bird.get("meta").get("uid")
     bird_origin = os.path.abspath(os.path.join("./assets", uid))
     
-    bird_out = os.path.abspath(os.path.join(out, uid))
+    bird_out = os.path.abspath(os.path.join(out, bird.get("uid")))
     os.mkdir(bird_out)
     
     # Copy image
