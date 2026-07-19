@@ -32,7 +32,7 @@ def prepare_bird(item, index = 0):
       "en": data["names"]["english"],
       "la": data["names"]["latin"]
     },
-    "keywords": f"{data["id"]} {data["names"]["spanish"]} {read_or_empty(data["names"], "english")} {data["names"]["latin"]}".lower().strip(),
+    "keywords": f"{data["id"]} {data["names"]["spanish"]} {read_or_empty(data["names"], "english")} {data["names"]["latin"]} {read_or_empty(data["info"]["geo"], "value")} {read_or_empty(data["info"]["order"], "value")} {read_or_empty(data["info"]["size"], "value")} {read_or_empty(read_or_empty(data["info"], "iucn", {}), "value")} {read_or_empty(data["info"]["species"], "value")} {"dimorfismo" if read_or_empty(data["info"]["dimorfism"], "value", default="") != "No" else ""} {"migratoria" if read_or_empty(data["info"]["migration"], "value", default="") != "No" else ""}".lower().strip(),
     "about": {
       "habitat": read_or_empty(data, "habitat").strip(), 
       "description": read_or_empty(data, "description").strip(),
